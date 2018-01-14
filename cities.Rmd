@@ -1,0 +1,37 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r initialize, echo = FALSE}
+
+cities <- read.csv("simplemaps-worldcities-basic.csv", stringsAsFactors = FALSE, na.strings="-99")
+
+#omit NA
+cities <- na.omit(cities)
+
+#resort
+
+cities <- data.frame(lng=cities$lng, lat=cities$lat,city=cities$city, pop=cities$pop)
+
+today <- Sys.Date()
+```
+
+
+#### 7333 special cities and their population as of `r today`
+
+Data taken from: SimpleMaps.com
+
+```{r interactiveMap, echo = FALSE, warning=FALSE, message=FALSE, fig.align='center'}
+library(leaflet)
+
+cityData <- paste(cities$city, "\t",cities$pop, "inhabitants.")
+
+    my_map <- cities %>% 
+          leaflet() %>% 
+          addTiles() %>% 
+          addCircleMarkers(weight=2, radius=sqrt(cities$pop),  label=cityData, clusterOptions = markerClusterOptions())
+my_map
+
+```
