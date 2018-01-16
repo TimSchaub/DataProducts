@@ -1,0 +1,26 @@
+---
+title: "Data Products: plotly"
+author: "Tim Schaub"
+date: "14 Januar 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r initialize, echo = FALSE}
+
+data(volcano)
+```
+
+
+## Volcano heatmap
+
+
+```{r plot, warning=FALSE, message=FALSE}
+
+
+library(plotly)
+plot_ly(z = volcano,type="heatmap")
+```
