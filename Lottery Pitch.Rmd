@@ -79,8 +79,8 @@ The tool can be found on [here](https://timschaub.shinyapps.io/lottery/).
 ## Usage
 <TABLE>
   <TR>
-    <TD>
-      <IMG src="pic/shot1.jpg"/>
+    <TD width=448px>
+      <IMG src="pic/shot1.jpg" width="100%">
     </TD>
     <TD>
       The tool reacts on the change of the controls on the left hand side. The slider control on the top gives the numbers of balls in the ballot to draw from. The second slider controls how many balls from the total number are drawn to get the winning numbers. <BR> 
@@ -105,6 +105,7 @@ The tool uses the binomial coefficients and their differences when calculating t
 This is repeated for all k between 3 and d. The final caclulation changes the probabilities to rations by computing    $1/P(k)$. 
 
 
+In case the above formulas does not show, please right click on one of them, choose Math settings -> Math renderer -> SVG.
 
 ---
 
